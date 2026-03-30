@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abhishek | Animated Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff6a00, #ee0979);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% }
+            50% { background-position: 100% }
+            100% { background-position: 0% }
+        }
+
+        header {
+            padding: 20px;
+            font-size: 28px;
+            background: rgba(0,0,0,0.3);
+            animation: slideDown 1s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 50px;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #ff9800;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.2);
+            background: #e68900;
+        }
+
+        .card {
+            margin: 20px auto;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    🚀 My Animated Website
+</header>
+
+<h1>Hi, I'm Abhishek 👋</h1>
+<p>BTech Student | Web Developer</p>
+
+<button class="btn" onclick="showMessage()">Click Me</button>
+
+<div class="card">
+    <h3>💻 Skills</h3>
+    <p>Python, HTML, CSS</p>
+</div>
+
+<div class="card">
+    <h3>📚 Projects</h3>
+    <p>Websites & Mini Projects</p>
+</div>
+
+<footer>
+    © 2026 Abhishek
+</footer>
+
+<script>
+function showMessage() {
+    alert("🔥 Welcome to my animated website!");
+}
+</script>
+
+</body>
+</html>
