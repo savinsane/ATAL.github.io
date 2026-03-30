@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Abhishek | Animated Portfolio</title>
+    <title>Abhishek | Portfolio</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial;
-            background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff6a00, #ee0979);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            background: black;
             color: white;
             text-align: center;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% }
-            50% { background-position: 100% }
-            100% { background-position: 0% }
         }
 
         header {
             padding: 20px;
             font-size: 28px;
-            background: rgba(0,0,0,0.3);
-            animation: slideDown 1s ease;
+            background: #111;
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .container {
+            padding: 50px;
         }
 
         h1 {
             font-size: 50px;
-            animation: fadeIn 2s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .typing {
+            color: #00ffcc;
+            font-size: 22px;
+            margin-top: 10px;
+            height: 30px;
         }
 
         .btn {
-            padding: 12px 25px;
-            background: #ff9800;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            cursor: pointer;
             margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background: #00ffcc;
+            color: black;
+            cursor: pointer;
             transition: 0.3s;
         }
 
         .btn:hover {
             transform: scale(1.2);
-            background: #e68900;
+        }
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
         }
 
         .card {
@@ -63,21 +59,13 @@
             width: 250px;
             padding: 20px;
             border-radius: 15px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0); }
+            background: #111;
         }
 
         footer {
             margin-top: 40px;
             padding: 10px;
-            background: rgba(0,0,0,0.3);
+            background: #111;
         }
     </style>
 </head>
@@ -85,22 +73,32 @@
 <body>
 
 <header>
-    🚀 My Animated Website
+    🚀 My Portfolio
 </header>
 
-<h1>Hi, I'm Abhishek 👋</h1>
-<p>BTech Student | Web Developer</p>
+<div class="container">
 
-<button class="btn" onclick="showMessage()">Click Me</button>
+    <h1>Hi, I'm Abhishek 👋</h1>
 
-<div class="card">
-    <h3>💻 Skills</h3>
-    <p>Python, HTML, CSS</p>
-</div>
+    <!-- Typing Animation -->
+    <div class="typing" id="typing"></div>
 
-<div class="card">
-    <h3>📚 Projects</h3>
-    <p>Websites & Mini Projects</p>
+    <!-- Profile Image -->
+    <img src="https://via.placeholder.com/150" alt="profile">
+
+    <br>
+    <button class="btn" onclick="showMessage()">Click Me</button>
+
+    <div class="card">
+        <h3>💻 Skills</h3>
+        <p>Python, HTML, CSS</p>
+    </div>
+
+    <div class="card">
+        <h3>📚 Projects</h3>
+        <p>Websites & Mini Projects</p>
+    </div>
+
 </div>
 
 <footer>
@@ -108,8 +106,21 @@
 </footer>
 
 <script>
+const text = "BTech Student | Web Developer | Learning AI";
+let i = 0;
+
+function typingEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 50);
+    }
+}
+
+typingEffect();
+
 function showMessage() {
-    alert("🔥 Welcome to my animated website!");
+    alert("🔥 Welcome to my advanced website!");
 }
 </script>
 
